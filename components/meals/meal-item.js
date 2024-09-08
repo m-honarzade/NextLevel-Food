@@ -2,6 +2,8 @@ import Image from "next/image";
 import classes from "./meal-item.module.css";
 import Link from "next/link";
 const MealItem = ({ title, slug, image, summary, creator }) => {
+  console.log("*********");
+  console.log(title, slug, image, summary, creator);
   return (
     <article className={classes.meal}>
       <header>
