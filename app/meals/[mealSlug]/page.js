@@ -1,10 +1,14 @@
 import Image from "next/image";
-import classes from "./page.module.css";
+import { notFound } from "next/navigation";
 import { getMeal } from "@/lib/meals";
+import classes from "./page.module.css";
 
 const MealDetails = ({ params }) => {
   // params passed by next.js
   const meal = getMeal(params.mealSlug);
+  if (!meal) {
+    notFound();
+  }
   meal.instructions = meal.instructions.replace(/\n/g, "</br>");
   return (
     <>
