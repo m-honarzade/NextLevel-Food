@@ -1,6 +1,7 @@
 import ImagePicker from "@/components/meals/image-picker";
 import classes from "./page.module.css";
 import { shareMeal } from "@/lib/actions";
+
 const ShareMealPage = () => {
   return (
     <>
@@ -39,7 +40,7 @@ const ShareMealPage = () => {
               required
             ></textarea>
           </p>
-          <ImagePicker label={"userImage"} name={"userImage"} />
+          <ImagePicker label={"userImage"} name={"image"} />
           <p className={classes.actions}>
             <button type="submit">Share Meal</button>
           </p>
