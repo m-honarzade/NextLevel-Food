@@ -5,6 +5,11 @@ import { getMeals } from "@/lib/meals";
 import classes from "./page.module.css";
 import MealsGrid from "@/components/meals/meals-grid";
 
+export const metadata = {
+  title: "All Meals",
+  description: "Brows the delicious meals shared by our vibrant community",
+};
+
 const Meals = async () => {
   const mealsData = await getMeals();
   return <MealsGrid meals={mealsData} />;
@@ -27,7 +32,9 @@ const MealsPage = () => {
         </p>
       </header>
       <main className={classes.main}>
-        <Suspense fallback={<p className={classes.loading}>Fetching Meals....</p>}>
+        <Suspense
+          fallback={<p className={classes.loading}>Fetching Meals....</p>}
+        >
           <Meals />
         </Suspense>
       </main>
